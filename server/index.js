@@ -22,10 +22,8 @@ const corsOptions = {
 };
 app.use(require('cors')(corsOptions));
 
-// Serve React app in production
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
-}
+// Note: Frontend is deployed separately on Vercel
+// This backend only serves API endpoints
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -142,13 +140,6 @@ app.get('/api/file/:hash', async (req, res) => {
         res.status(404).json({ error: 'File not found' });
     }
 });
-
-// Serve React app for all other routes (production only)
-if (process.env.NODE_ENV === 'production') {
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
-    });
-}
 
 // Error handling middleware
 app.use((error, req, res, next) => {
