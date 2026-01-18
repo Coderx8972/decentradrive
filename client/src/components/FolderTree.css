@@ -1,0 +1,129 @@
+.folder-tree {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tree-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.folder-list {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.folder-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.folder-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.folder-item.active {
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+    border-left: 3px solid var(--primary-gradient-start);
+}
+
+.folder-icon {
+    font-size: 1.3rem;
+    margin-right: 0.75rem;
+}
+
+.folder-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.create-folder-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(90deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.create-folder-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.create-folder-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.folder-modal {
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+}
+
+.folder-modal h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.3rem;
+}
+
+.folder-modal input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.folder-modal input:focus {
+    outline: none;
+    border-color: var(--primary-gradient-start);
+}
+
+.folder-modal .modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.folder-modal .modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.folder-modal .modal-actions button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.folder-modal .modal-actions button.primary {
+    background: linear-gradient(90deg, var(--primary-gradient-start), var(--primary-gradient-end));
+    border-color: transparent;
+}
+
+.folder-modal .modal-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

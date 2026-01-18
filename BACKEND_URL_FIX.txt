@@ -1,0 +1,17 @@
+// Update App.js to support production backend URL
+
+// Add this near the top of the file, after imports
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || '';
+
+// In handleFileUpload function, replace this line:
+// const ipfsResponse = await fetch('/api/upload', {
+
+// With:
+const ipfsResponse = await fetch(`${BACKEND_URL}/api/upload`, {
+    method: 'POST',
+    body: formData
+});
+
+// Similarly for download/preview, update the URLs:
+// Instead of: `/api/file/${file.ipfsHash}`
+// Use: `${BACKEND_URL}/api/file/${file.ipfsHash}`

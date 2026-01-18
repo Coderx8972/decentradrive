@@ -1,0 +1,141 @@
+.preview-modal {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.preview-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.preview-actions button {
+    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.preview-actions button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.close-btn {
+    font-size: 1.5rem !important;
+    padding: 0.25rem 0.75rem !important;
+}
+
+.preview-content {
+    flex: 1;
+    overflow: auto;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.preview-pdf {
+    width: 100%;
+    height: 70vh;
+    border: none;
+    border-radius: 8px;
+}
+
+.preview-video {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 8px;
+}
+
+.preview-audio {
+    width: 100%;
+    max-width: 500px;
+}
+
+.preview-text {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 70vh;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.preview-unsupported {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.preview-unsupported p:first-child {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.preview-loading,
+.preview-error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+.preview-error {
+    color: #ef4444;
+}
+
+.preview-footer {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--glass-border);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .preview-modal {
+        width: 95vw;
+        max-height: 95vh;
+    }
+
+    .preview-header h2 {
+        font-size: 1rem;
+    }
+
+    .preview-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
